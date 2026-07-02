@@ -1,12 +1,12 @@
 function lineUpStudents(students) {
-  const namesArray = students.split(" ");
+  const names = students.split(" ");
 
-  namesArray.sort((a, b) => b.localeCompare(a));
+  names.sort((a, b) => b.localeCompare(a));
 
-  namesArray.sort((a, b) => {
+  names.sort((a, b) => {
     return b.length - a.length;
   });
-  return namesArray;
+  return names;
 }
 
 const students = 'Tadashi Takahiro Takao Takashi Takayuki Takehiko Takeo Takeshi Takeshi';
