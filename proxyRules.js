@@ -4,12 +4,10 @@ const rules = {
   username: (v) => typeof v === "string" && v.length >= 3
 }
 
-const formData = {}
-
 const handler = {
   set(obj, prop, value) {
     if (!(prop in rules)) {
-      throw new TypeError(`Cannot set unkown field "${prop}"`);
+      throw new TypeError(`Cannot set unknown field "${prop}"`);
     }
     if (!rules[prop](value)) {
       throw new TypeError(`Invalid value for ${prop}: ${value}`);
@@ -33,5 +31,13 @@ const handler = {
   }
 };
 
+const formData = {age: 23, email: "jes@gmail.com", username: "Jesse"}
 const user = new Proxy(formData, handler);
-console.log(user.email);
+
+try {
+  delete user.username;
+} catch (err) {
+  console.log(`Caught error:`, err.message);
+}
+
+delete user.email;
