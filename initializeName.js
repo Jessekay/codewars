@@ -10,4 +10,4 @@ function initials(name) {
   return [first, ...middles, last].join(' ')
 }
 
-console.log(initials("Jesse Megan Kayigire"));
+console.log(initials("Jesse Rich Kayigire"));
