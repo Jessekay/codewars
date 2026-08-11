@@ -20,4 +20,4 @@ function getWeather(city) {
 
 console.log(getWeather("Kigali"));
 console.log(getWeather("Nairobi"));
-console.log(getWeather("Paris"));
+console.log(getWeather("Paris"))
